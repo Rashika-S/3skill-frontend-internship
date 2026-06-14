@@ -4,6 +4,10 @@
 
 A front-end clone of the Raw Pressery Juices collection page built using only HTML and CSS as part of the 3Skill Frontend Internship.
 
+## Live Demo
+
+🔗 https://3skill-frontend-internship.vercel.app/
+
 ## Original Website
 
 https://www.rawpressery.com/collections/juices
@@ -45,6 +49,7 @@ Project-1-Raw-Pressery-Clone
 * CSS Grid
 * Website Cloning
 * Git & GitHub Workflow
+* Vercel Deployment
 
 ## Status
 

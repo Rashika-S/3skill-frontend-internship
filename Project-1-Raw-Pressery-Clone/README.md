@@ -4,6 +4,10 @@
 
 A front-end clone of the Raw Pressery Juices collection page built using only HTML and CSS as part of the 3Skill Frontend Internship.
 
+## Original Website
+
+https://www.rawpressery.com/collections/juices
+
 ## Technologies Used
 
 * HTML5
@@ -19,25 +23,33 @@ A front-end clone of the Raw Pressery Juices collection page built using only HT
 * Product Cards
 * Product Links
 * Hover Effects
-* Footer
+* Footer Section
 
-## Project Structure
+## Folder Structure
 
+```plaintext
 Project-1-Raw-Pressery-Clone
+│
 ├── index.html
-├── css/
-│ └── style.css
-├── images/
+├── css
+│   └── style.css
+├── images
 └── README.md
+```
 
-## Live Demo
+## Learning Outcomes
 
-(Add GitHub Pages Link Here)
+* Semantic HTML Structure
+* CSS Layout Techniques
+* Flexbox
+* CSS Grid
+* Website Cloning
+* Git & GitHub Workflow
 
-## Original Website
+## Status
 
-https://www.rawpressery.com/collections/juices
+✅ Completed
 
 ## Author
 
-Rashika S
+**Rashika S**

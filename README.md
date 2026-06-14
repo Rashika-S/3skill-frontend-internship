@@ -20,6 +20,7 @@ This repository contains all frontend development projects completed during my i
 * JavaScript
 * Git
 * GitHub
+* Vercel
 
 ## Repository Structure
 
@@ -36,7 +37,7 @@ This repository contains all frontend development projects completed during my i
 
 ## Internship Goal
 
-To build six frontend projects while learning modern web development practices, version control, UI design, and deployment workflows.
+To build six frontend projects while learning modern web development practices, version control, UI design, deployment workflows, and responsive web development.
 
 ## Author
 

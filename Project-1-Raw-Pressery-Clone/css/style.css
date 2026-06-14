@@ -12,25 +12,52 @@ body{
 }
 
 .navbar{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-    padding:20px 60px;
+    padding: 15px 60px;
+    background: white;
 
-    border-bottom:1px solid #eee;
+    border-bottom: 1px solid #eee;
 }
 
 .nav-links{
     display:flex;
-    gap:30px;
-
+    gap:40px;
     list-style:none;
+}
+
+.nav-links li{
+    cursor:pointer;
+    font-size:16px;
+    font-weight:500;
+    transition:0.3s;
+}
+
+.nav-links li:hover{
+    color:orange;
+}
+
+.nav-icons{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-icons img{
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
 }
 
 .logo{
     font-size:24px;
     font-weight:bold;
+}
+.logo img{
+    width: 70px;
+    height: auto;
 }
 
 *{
@@ -77,10 +104,14 @@ body{
     color: white;
     margin-bottom: 20px;
 }
+.hero-content p{
+    font-size: 18px;
+    color: white;
+    margin-bottom: 30px;
+}
 
 .hero-btn{
     display: inline-block;
-
     margin-top: 25px;
     padding: 12px 30px;
 
@@ -92,6 +123,7 @@ body{
 
     border-radius: 5px;
 }
+
 
 .products{
     padding: 80px;
@@ -130,4 +162,25 @@ body{
 
 .card:hover{
     transform: translateY(-8px);
+}
+
+.buy-btn{
+    width:100%;
+    padding:12px;
+    border:none;
+    background:black;
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.buy-btn:hover{
+    background:#333;
+}
+
+footer{
+    background:black;
+    color:white;
+    text-align:center;
+    padding:40px;
 }

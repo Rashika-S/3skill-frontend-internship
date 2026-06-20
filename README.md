@@ -4,14 +4,17 @@ This repository contains all frontend development projects completed during my i
 
 ## Projects
 
-| Project   | Description                | Status        |
-| --------- | -------------------------- | ------------- |
-| Project 1 | Raw Pressery Website Clone | ✅ Completed   |
-| Project 2 | Portfolio Template         | ✅ Completed  |
-| Project 3 | Coming Soon                | ⏳ In Progress   |
-| Project 4 | Coming Soon                | ⏳ Upcoming    |
-| Project 5 | Coming Soon                | ⏳ Upcoming    |
-| Project 6 | Coming Soon                | ⏳ Upcoming    |
+## Projects
+
+| Project   | Description        | Status      | Live Demo                               |
+| --------- | ------------------ | ----------- | --------------------------------------- |
+| Project 1 | Raw Pressery Clone | ✅ Completed | https://3skill-frontend-internship.vercel.app/|
+| Project 2 | Portfolio Template | ✅ Completed | https://project-2-ten-wheat.vercel.app/ |
+| Project 3 | Coming Soon        | ⏳ Upcoming  | -                                       |
+| Project 4 | Coming Soon        | ⏳ Upcoming  | -                                       |
+| Project 5 | Coming Soon        | ⏳ Upcoming  | -                                       |
+| Project 6 | Coming Soon        | ⏳ Upcoming  | -                                       |
+
 
 ## Tech Stack
 

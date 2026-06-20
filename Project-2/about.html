@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Your Name</title>
+  <meta name="description" content="Biography, education and experience timeline of [Your Name]." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { mist:'#f3f8fd', sky:'#d9e9fb', powder:'#aecdf0', azure:'#5b8dd9', navy:'#1f3a5f' },
+          fontFamily: { display:['Cormorant Garamond','serif'], body:['Poppins','sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="font-body text-navy">
+
+  <div class="bg-ambient"></div>
+
+  <svg width="0" height="0" class="absolute">
+    <defs>
+      <linearGradient id="butterflyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#5b8dd9" />
+        <stop offset="100%" stop-color="#1f3a5f" />
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <!-- =================== NAVBAR =================== -->
+  <header class="fixed top-0 inset-x-0 z-50 glass-nav">
+    <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2 font-display text-2xl font-semibold text-navy">
+        <svg width="28" height="24" viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M50 30 C40 5, 5 5, 5 30 C5 48, 30 50, 50 38 Z" fill="url(#butterflyGradient)" opacity="0.85"/>
+          <path d="M50 30 C60 5, 95 5, 95 30 C95 48, 70 50, 50 38 Z" fill="url(#butterflyGradient)" opacity="0.85"/>
+          <path d="M50 38 C42 50, 40 65, 50 75 C60 65, 58 50, 50 38 Z" fill="url(#butterflyGradient)"/>
+        </svg>
+        Y.N<span class="text-azure">.</span>
+      </a>
+      <div class="hidden md:flex items-center gap-8 text-sm">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link active">About</a>
+        <a href="skills.html" class="nav-link">Skills</a>
+        <a href="certificates.html" class="nav-link">Certificates</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+      <a href="contact.html" class="hidden md:inline-flex btn-primary text-sm py-2.5 px-5">Let's Talk</a>
+      <button id="menu-toggle" aria-expanded="false" aria-label="Toggle navigation menu" class="md:hidden text-navy">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </nav>
+    <div id="mobile-menu" class="hidden md:hidden flex-col gap-4 px-6 pb-6 text-sm">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link active">About</a>
+      <a href="skills.html" class="nav-link">Skills</a>
+      <a href="certificates.html" class="nav-link">Certificates</a>
+      <a href="projects.html" class="nav-link">Projects</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+  </header>
+
+  <!-- =================== PAGE HEADER =================== -->
+  <section class="relative pt-36 pb-16 px-6 max-w-5xl mx-auto text-center">
+    <svg class="butterfly butterfly-slow hidden sm:block" style="top:10%; left:6%; width:40px;" viewBox="0 0 100 80" xmlns="http://www.w3.org/2000/svg">
+      <path class="wing wing-left" d="M50 30 C40 5, 5 5, 5 30 C5 48, 30 50, 50 38 Z" fill="url(#butterflyGradient)" opacity="0.5"/>
+      <path class="wing wing-right" d="M50 30 C60 5, 95 5, 95 30 C95 48, 70 50, 50 38 Z" fill="url(#butterflyGradient)" opacity="0.5"/>
+    </svg>
+    <p class="section-eyebrow justify-center flex reveal">Get To Know Me</p>
+    <h1 class="font-display text-5xl font-semibold mt-3 reveal">About Me</h1>
+    <div class="heading-underline mx-auto mt-4 reveal"></div>
+  </section>
+
+  <!-- =================== BIOGRAPHY =================== -->
+  <section class="relative px-6 max-w-5xl mx-auto pb-20">
+    <div class="reveal glass-card p-8 sm:p-12 grid md:grid-cols-3 gap-8 items-center">
+      <div class="flex justify-center">
+        <div class="profile-ring w-40 h-40 sm:w-48 sm:h-48">
+          <div class="img-placeholder w-full h-full rounded-full text-xs">Photo<br/>Placeholder</div>
+        </div>
+      </div>
+      <div class="md:col-span-2">
+        <h2 class="font-display text-2xl font-semibold mb-3">Biography</h2>
+        <p class="text-navy/70 leading-relaxed">
+          Write your biography here — where you're from, what drives you, and the
+          values that shape your work. Talk about your journey, your interests outside
+          of work, and what makes your perspective unique. Replace this placeholder
+          paragraph with two or three sentences that feel authentically you.
+        </p>
+        <p class="mt-4 text-navy/70 leading-relaxed">
+          Add a second paragraph here if you'd like to expand on your goals, the kind
+          of opportunities you're looking for, or what you enjoy most about your craft.
+        </p>
+        <a href="assets/resume/resume.pdf" download class="btn-primary mt-6 text-sm">
+          Download Resume
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== EDUCATION TIMELINE =================== -->
+  <section class="relative px-6 max-w-4xl mx-auto pb-20">
+    <h2 class="font-display text-3xl font-semibold mb-2 reveal">Education</h2>
+    <p class="text-navy/60 mb-10 reveal">An overview of my academic background.</p>
+
+    <div class="timeline reveal">
+      <div class="timeline-item">
+        <p class="text-sm text-azure font-medium">2022 — Present</p>
+        <h3 class="font-display text-xl font-semibold mt-1">Degree Name, University Name</h3>
+        <p class="text-navy/70 mt-1 text-sm leading-relaxed">Major / specialization placeholder. Briefly mention relevant coursework, achievements, or GPA if desired.</p>
+      </div>
+      <div class="timeline-item">
+        <p class="text-sm text-azure font-medium">2020 — 2022</p>
+        <h3 class="font-display text-xl font-semibold mt-1">High School / Pre-University Name</h3>
+        <p class="text-navy/70 mt-1 text-sm leading-relaxed">Stream / focus placeholder, notable achievements, or activities worth mentioning.</p>
+      </div>
+      <div class="timeline-item">
+        <p class="text-sm text-azure font-medium">2018 — 2020</p>
+        <h3 class="font-display text-xl font-semibold mt-1">Earlier School Name</h3>
+        <p class="text-navy/70 mt-1 text-sm leading-relaxed">Optional earlier milestone — remove if not relevant to your story.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== EXPERIENCE TIMELINE =================== -->
+  <section class="relative px-6 max-w-4xl mx-auto pb-20">
+    <h2 class="font-display text-3xl font-semibold mb-2 reveal">Experience</h2>
+    <p class="text-navy/60 mb-10 reveal">Roles and internships that shaped my skills.</p>
+
+    <div class="timeline reveal">
+      <div class="timeline-item">
+        <p class="text-sm text-azure font-medium">2025 — Present</p>
+        <h3 class="font-display text-xl font-semibold mt-1">Job Title, Company Name</h3>
+        <p class="text-navy/70 mt-1 text-sm leading-relaxed">Describe your responsibilities and key contributions. Focus on outcomes and skills used.</p>
+      </div>
+      <div class="timeline-item">
+        <p class="text-sm text-azure font-medium">2024 — 2025</p>
+        <h3 class="font-display text-xl font-semibold mt-1">Internship Title, Company Name</h3>
+        <p class="text-navy/70 mt-1 text-sm leading-relaxed">Summarize the internship scope, tools used, and what you learned or delivered.</p>
+      </div>
+      <div class="timeline-item">
+        <p class="text-sm text-azure font-medium">2023</p>
+        <h3 class="font-display text-xl font-semibold mt-1">Freelance / Volunteer Role</h3>
+        <p class="text-navy/70 mt-1 text-sm leading-relaxed">Optional earlier experience — adjust or remove as needed.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== LEADERSHIP & EXTRACURRICULAR =================== -->
+  <section class="relative px-6 max-w-5xl mx-auto pb-24">
+    <h2 class="font-display text-3xl font-semibold mb-2 reveal">Leadership &amp; Extracurricular Activities</h2>
+    <p class="text-navy/60 mb-10 reveal">Beyond the classroom and the office.</p>
+
+    <div class="grid sm:grid-cols-2 gap-6">
+      <div class="glass-card p-6 reveal">
+        <h3 class="font-display text-lg font-semibold">Club / Society Position</h3>
+        <p class="text-sm text-azure mt-1">Organization Name · 2024 — Present</p>
+        <p class="text-navy/70 mt-2 text-sm leading-relaxed">Describe your role, initiatives led, and the impact you made.</p>
+      </div>
+      <div class="glass-card p-6 reveal">
+        <h3 class="font-display text-lg font-semibold">Event Organizer</h3>
+        <p class="text-sm text-azure mt-1">Event / Fest Name · 2023</p>
+        <p class="text-navy/70 mt-2 text-sm leading-relaxed">Mention the scale of the event, team size managed, and outcomes achieved.</p>
+      </div>
+      <div class="glass-card p-6 reveal">
+        <h3 class="font-display text-lg font-semibold">Volunteer Work</h3>
+        <p class="text-sm text-azure mt-1">Organization Name · 2022 — 2023</p>
+        <p class="text-navy/70 mt-2 text-sm leading-relaxed">Briefly describe the cause and your contribution.</p>
+      </div>
+      <div class="glass-card p-6 reveal">
+        <h3 class="font-display text-lg font-semibold">Hobby / Interest</h3>
+        <p class="text-sm text-azure mt-1">Personal</p>
+        <p class="text-navy/70 mt-2 text-sm leading-relaxed">A personal touch — a hobby, sport, or creative pursuit you enjoy.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== FOOTER =================== -->
+  <footer class="relative px-6 py-10 max-w-6xl mx-auto">
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-navy/60">
+      <p>© 2026 Your Name. All rights reserved.</p>
+      <div class="flex gap-4">
+        <a href="contact.html" class="social-icon" aria-label="Email">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg>
+        </a>
+        <a href="#" class="social-icon" aria-label="LinkedIn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.3c-1 0-1.8-.8-1.8-1.8s.8-1.8 1.8-1.8 1.8.8 1.8 1.8-.8 1.8-1.8 1.8zm13.5 10.3h-3v-4.5c0-1.1 0-2.5-1.5-2.5s-1.7 1.2-1.7 2.4v4.6h-3v-9h2.9v1.2c.4-.7 1.4-1.4 2.8-1.4 3 0 3.5 2 3.5 4.5v4.7z"/></svg>
+        </a>
+        <a href="#" class="social-icon" aria-label="GitHub">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.23c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.21.08 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.49 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 0z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <button id="back-to-top" class="fixed bottom-6 right-6 z-40 w-12 h-12 rounded-full btn-primary justify-center opacity-0 pointer-events-none transition-opacity" aria-label="Back to top">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

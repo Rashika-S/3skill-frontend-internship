@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Name — Portfolio</title>
+  <meta name="description" content="Portfolio of [Your Name] — [Your Role / Tagline placeholder]." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            mist: '#f3f8fd',
+            sky: '#d9e9fb',
+            powder: '#aecdf0',
+            azure: '#5b8dd9',
+            navy: '#1f3a5f',
+          },
+          fontFamily: {
+            display: ['Cormorant Garamond', 'serif'],
+            body: ['Poppins', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="font-body text-navy">
+
+  <!-- Ambient blue-wash background, sits behind all content -->
+  <div class="bg-ambient"></div>
+
+  <!-- Shared gradient definitions for every butterfly SVG on this page -->
+  <svg width="0" height="0" class="absolute">
+    <defs>
+      <linearGradient id="butterflyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#5b8dd9" />
+        <stop offset="100%" stop-color="#1f3a5f" />
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <!-- =================== NAVBAR =================== -->
+  <header class="fixed top-0 inset-x-0 z-50 glass-nav">
+    <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <!-- Logo placeholder -->
+      <a href="index.html" class="flex items-center gap-2 font-display text-2xl font-semibold text-navy">
+        <svg width="28" height="24" viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M50 30 C40 5, 5 5, 5 30 C5 48, 30 50, 50 38 Z" fill="url(#butterflyGradient)" opacity="0.85"/>
+          <path d="M50 30 C60 5, 95 5, 95 30 C95 48, 70 50, 50 38 Z" fill="url(#butterflyGradient)" opacity="0.85"/>
+          <path d="M50 38 C42 50, 40 65, 50 75 C60 65, 58 50, 50 38 Z" fill="url(#butterflyGradient)"/>
+        </svg>
+        RS<span class="text-azure">.</span>
+      </a>
+
+      <!-- Desktop nav links -->
+      <div class="hidden md:flex items-center gap-8 text-sm">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="skills.html" class="nav-link">Skills</a>
+        <a href="certificates.html" class="nav-link">Certificates</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+
+      <a href="contact.html" class="hidden md:inline-flex btn-primary text-sm py-2.5 px-5">Let's Talk</a>
+
+      <!-- Mobile menu toggle -->
+      <button id="menu-toggle" aria-expanded="false" aria-label="Toggle navigation menu" class="md:hidden text-navy">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </nav>
+
+    <!-- Mobile menu panel -->
+    <div id="mobile-menu" class="hidden md:hidden flex-col gap-4 px-6 pb-6 text-sm">
+      <a href="index.html" class="nav-link active">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="skills.html" class="nav-link">Skills</a>
+      <a href="certificates.html" class="nav-link">Certificates</a>
+      <a href="projects.html" class="nav-link">Projects</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+  </header>
+
+  <!-- =================== HERO =================== -->
+  <section class="relative pt-36 pb-24 px-6 max-w-6xl mx-auto overflow-hidden">
+
+    <!-- Decorative butterflies -->
+    <svg class="butterfly butterfly-slow hidden sm:block" style="top:8%; left:4%; width:46px;" viewBox="0 0 100 80" xmlns="http://www.w3.org/2000/svg">
+      <path class="wing wing-left" d="M50 30 C40 5, 5 5, 5 30 C5 48, 30 50, 50 38 Z" fill="url(#butterflyGradient)" opacity="0.55"/>
+      <path class="wing wing-right" d="M50 30 C60 5, 95 5, 95 30 C95 48, 70 50, 50 38 Z" fill="url(#butterflyGradient)" opacity="0.55"/>
+      <path d="M50 38 C42 50, 40 65, 50 75 C60 65, 58 50, 50 38 Z" fill="url(#butterflyGradient)" opacity="0.7"/>
+    </svg>
+    <svg class="butterfly butterfly-slower hidden sm:block" style="top:55%; right:2%; width:34px;" viewBox="0 0 100 80" xmlns="http://www.w3.org/2000/svg">
+      <path class="wing wing-left" d="M50 30 C40 5, 5 5, 5 30 C5 48, 30 50, 50 38 Z" fill="url(#butterflyGradient)" opacity="0.4"/>
+      <path class="wing wing-right" d="M50 30 C60 5, 95 5, 95 30 C95 48, 70 50, 50 38 Z" fill="url(#butterflyGradient)" opacity="0.4"/>
+      <path d="M50 38 C42 50, 40 65, 50 75 C60 65, 58 50, 50 38 Z" fill="url(#butterflyGradient)" opacity="0.55"/>
+    </svg>
+
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+
+      <!-- Text content -->
+      <div class="reveal">
+        <p class="section-eyebrow mb-4">Portfolio</p>
+        <h1 class="font-display text-5xl sm:text-6xl font-semibold leading-tight text-navy">
+          Hi, I'm <span class="text-azure">Your Name</span>
+        </h1>
+        <p class="mt-3 text-xl sm:text-2xl font-display italic text-azure">Your Role / Tagline Placeholder</p>
+        <p class="mt-6 text-base sm:text-lg text-navy/70 leading-relaxed max-w-md">
+          A short introduction paragraph goes here. Describe who you are, what you do,
+          and the kind of work or impact you're passionate about. Replace this text
+          with your own story.
+        </p>
+
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="projects.html" class="btn-primary">
+            View Projects
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a href="contact.html" class="btn-outline">Contact Me</a>
+        </div>
+      </div>
+
+      <!-- Profile image placeholder -->
+      <div class="reveal flex justify-center md:justify-end">
+        <div class="relative">
+          <div class="profile-ring w-64 h-64 sm:w-80 sm:h-80">
+            <div class="img-placeholder w-full h-full rounded-full">
+              Profile Photo<br/>Placeholder<br/>(400 × 400)
+            </div>
+          </div>
+          <!-- small floating butterfly near the photo -->
+          <svg class="butterfly" style="top:-10px; right:-6px; width:42px;" viewBox="0 0 100 80" xmlns="http://www.w3.org/2000/svg">
+            <path class="wing wing-left" d="M50 30 C40 5, 5 5, 5 30 C5 48, 30 50, 50 38 Z" fill="url(#butterflyGradient)"/>
+            <path class="wing wing-right" d="M50 30 C60 5, 95 5, 95 30 C95 48, 70 50, 50 38 Z" fill="url(#butterflyGradient)"/>
+            <path d="M50 38 C42 50, 40 65, 50 75 C60 65, 58 50, 50 38 Z" fill="url(#butterflyGradient)"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- =================== STATISTICS =================== -->
+    <div class="reveal mt-20 grid grid-cols-1 sm:grid-cols-3 gap-6">
+      <div class="stat-card glass-card text-center py-8 px-6">
+        <p class="font-display text-4xl font-semibold text-azure">12+</p>
+        <p class="mt-2 text-sm tracking-wide uppercase text-navy/60">Projects Completed</p>
+      </div>
+      <div class="stat-card glass-card text-center py-8 px-6">
+        <p class="font-display text-4xl font-semibold text-azure">8+</p>
+        <p class="mt-2 text-sm tracking-wide uppercase text-navy/60">Certificates Earned</p>
+      </div>
+      <div class="stat-card glass-card text-center py-8 px-6">
+        <p class="font-display text-4xl font-semibold text-azure">15+</p>
+        <p class="mt-2 text-sm tracking-wide uppercase text-navy/60">Skills Mastered</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== QUICK INTRO STRIP =================== -->
+  <section class="relative py-20 px-6 max-w-6xl mx-auto">
+    <svg class="butterfly-watermark hidden md:block" style="top:0; right:-2rem; width:220px;" viewBox="0 0 100 80" xmlns="http://www.w3.org/2000/svg">
+      <path d="M50 30 C40 5, 5 5, 5 30 C5 48, 30 50, 50 38 Z" fill="#1f3a5f"/>
+      <path d="M50 30 C60 5, 95 5, 95 30 C95 48, 70 50, 50 38 Z" fill="#1f3a5f"/>
+    </svg>
+    <div class="reveal glass-card p-10 sm:p-14 text-center relative z-10">
+      <p class="section-eyebrow justify-center flex">What I Do</p>
+      <h2 class="font-display text-3xl sm:text-4xl font-semibold mt-3">Crafting thoughtful, elegant digital experiences</h2>
+      <p class="mt-4 text-navy/70 max-w-2xl mx-auto leading-relaxed">
+        Replace this paragraph with a summary of your focus areas — design, development,
+        leadership, or whatever best represents your work. Keep it short and confident.
+      </p>
+      <div class="heading-underline mx-auto mt-6"></div>
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <a href="about.html" class="btn-outline text-sm">More About Me</a>
+        <a href="skills.html" class="btn-outline text-sm">See My Skills</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== FOOTER =================== -->
+  <footer class="relative px-6 py-10 max-w-6xl mx-auto">
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-navy/60">
+      <p>© 2026 Your Name. All rights reserved.</p>
+      <div class="flex gap-4">
+        <a href="contact.html" class="social-icon" aria-label="Email">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg>
+        </a>
+        <a href="#" class="social-icon" aria-label="LinkedIn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.3c-1 0-1.8-.8-1.8-1.8s.8-1.8 1.8-1.8 1.8.8 1.8 1.8-.8 1.8-1.8 1.8zm13.5 10.3h-3v-4.5c0-1.1 0-2.5-1.5-2.5s-1.7 1.2-1.7 2.4v4.6h-3v-9h2.9v1.2c.4-.7 1.4-1.4 2.8-1.4 3 0 3.5 2 3.5 4.5v4.7z"/></svg>
+        </a>
+        <a href="#" class="social-icon" aria-label="GitHub">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.23c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.21.08 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.49 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 0z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <button id="back-to-top" class="fixed bottom-6 right-6 z-40 w-12 h-12 rounded-full btn-primary justify-center opacity-0 pointer-events-none transition-opacity" aria-label="Back to top">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

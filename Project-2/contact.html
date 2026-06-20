@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Your Name</title>
+  <meta name="description" content="Get in touch with [Your Name]." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { mist:'#f3f8fd', sky:'#d9e9fb', powder:'#aecdf0', azure:'#5b8dd9', navy:'#1f3a5f' },
+          fontFamily: { display:['Cormorant Garamond','serif'], body:['Poppins','sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="font-body text-navy">
+
+  <div class="bg-ambient"></div>
+
+  <svg width="0" height="0" class="absolute">
+    <defs>
+      <linearGradient id="butterflyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#5b8dd9" />
+        <stop offset="100%" stop-color="#1f3a5f" />
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <!-- =================== NAVBAR =================== -->
+  <header class="fixed top-0 inset-x-0 z-50 glass-nav">
+    <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2 font-display text-2xl font-semibold text-navy">
+        <svg width="28" height="24" viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M50 30 C40 5, 5 5, 5 30 C5 48, 30 50, 50 38 Z" fill="url(#butterflyGradient)" opacity="0.85"/>
+          <path d="M50 30 C60 5, 95 5, 95 30 C95 48, 70 50, 50 38 Z" fill="url(#butterflyGradient)" opacity="0.85"/>
+          <path d="M50 38 C42 50, 40 65, 50 75 C60 65, 58 50, 50 38 Z" fill="url(#butterflyGradient)"/>
+        </svg>
+        Y.N<span class="text-azure">.</span>
+      </a>
+      <div class="hidden md:flex items-center gap-8 text-sm">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="skills.html" class="nav-link">Skills</a>
+        <a href="certificates.html" class="nav-link">Certificates</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+      </div>
+      <a href="contact.html" class="hidden md:inline-flex btn-primary text-sm py-2.5 px-5">Let's Talk</a>
+      <button id="menu-toggle" aria-expanded="false" aria-label="Toggle navigation menu" class="md:hidden text-navy">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </nav>
+    <div id="mobile-menu" class="hidden md:hidden flex-col gap-4 px-6 pb-6 text-sm">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="skills.html" class="nav-link">Skills</a>
+      <a href="certificates.html" class="nav-link">Certificates</a>
+      <a href="projects.html" class="nav-link">Projects</a>
+      <a href="contact.html" class="nav-link active">Contact</a>
+    </div>
+  </header>
+
+  <!-- =================== PAGE HEADER =================== -->
+  <section class="relative pt-36 pb-12 px-6 max-w-5xl mx-auto text-center">
+    <svg class="butterfly butterfly-slow hidden sm:block" style="top:6%; left:10%; width:40px;" viewBox="0 0 100 80" xmlns="http://www.w3.org/2000/svg">
+      <path class="wing wing-left" d="M50 30 C40 5, 5 5, 5 30 C5 48, 30 50, 50 38 Z" fill="url(#butterflyGradient)" opacity="0.5"/>
+      <path class="wing wing-right" d="M50 30 C60 5, 95 5, 95 30 C95 48, 70 50, 50 38 Z" fill="url(#butterflyGradient)" opacity="0.5"/>
+    </svg>
+    <p class="section-eyebrow justify-center flex reveal">Get In Touch</p>
+    <h1 class="font-display text-5xl font-semibold mt-3 reveal">Contact Me</h1>
+    <div class="heading-underline mx-auto mt-4 reveal"></div>
+    <p class="mt-5 text-navy/70 max-w-xl mx-auto reveal">Have a project in mind or just want to say hello? I'd love to hear from you.</p>
+  </section>
+
+  <!-- =================== CONTACT CONTENT =================== -->
+  <section class="relative px-6 max-w-6xl mx-auto pb-24">
+    <div class="grid md:grid-cols-5 gap-8">
+
+      <!-- Contact info -->
+      <div class="md:col-span-2 reveal">
+        <div class="glass-card p-8 h-full flex flex-col">
+          <h2 class="font-display text-2xl font-semibold mb-6">Contact Details</h2>
+
+          <div class="space-y-5 text-sm">
+            <a href="mailto:you@example.com" class="flex items-center gap-4 group">
+              <span class="social-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg></span>
+              <span>
+                <span class="block text-navy/50 text-xs uppercase tracking-wide">Email</span>
+                <span class="group-hover:text-azure transition-colors">you@example.com</span>
+              </span>
+            </a>
+
+            <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener" class="flex items-center gap-4 group">
+              <span class="social-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.3c-1 0-1.8-.8-1.8-1.8s.8-1.8 1.8-1.8 1.8.8 1.8 1.8-.8 1.8-1.8 1.8zm13.5 10.3h-3v-4.5c0-1.1 0-2.5-1.5-2.5s-1.7 1.2-1.7 2.4v4.6h-3v-9h2.9v1.2c.4-.7 1.4-1.4 2.8-1.4 3 0 3.5 2 3.5 4.5v4.7z"/></svg></span>
+              <span>
+                <span class="block text-navy/50 text-xs uppercase tracking-wide">LinkedIn</span>
+                <span class="group-hover:text-azure transition-colors">linkedin.com/in/yourprofile</span>
+              </span>
+            </a>
+
+            <a href="https://github.com/yourusername" target="_blank" rel="noopener" class="flex items-center gap-4 group">
+              <span class="social-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.23c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.21.08 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.49 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 0z"/></svg></span>
+              <span>
+                <span class="block text-navy/50 text-xs uppercase tracking-wide">GitHub</span>
+                <span class="group-hover:text-azure transition-colors">github.com/yourusername</span>
+              </span>
+            </a>
+
+            <div class="flex items-center gap-4">
+              <span class="social-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s7-7.4 7-12a7 7 0 10-14 0c0 4.6 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></span>
+              <span>
+                <span class="block text-navy/50 text-xs uppercase tracking-wide">Location</span>
+                <span>City, Country Placeholder</span>
+              </span>
+            </div>
+          </div>
+
+          <div class="mt-8 pt-6 border-t border-sky/60">
+            <p class="text-xs uppercase tracking-wide text-navy/50 mb-3">Find me elsewhere</p>
+            <div class="flex gap-3">
+              <a href="#" class="social-icon" aria-label="Twitter / X">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.6 8.7L23 22h-6.6l-5.2-6.8L5 22H2l8.2-9.3L1.5 2h6.7l4.7 6.2z"/></svg>
+              </a>
+              <a href="#" class="social-icon" aria-label="Instagram">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+              </a>
+              <a href="#" class="social-icon" aria-label="Dribbble / Behance">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M4 9c4 1.2 8 1.2 16 0M3 15c5-1.5 10-1.5 17 0M9 3c3 5 3 13 0 18"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact form -->
+      <div class="md:col-span-3 reveal">
+        <form class="glass-card p-8 space-y-5" id="contact-form">
+          <h2 class="font-display text-2xl font-semibold mb-2">Send a Message</h2>
+
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div>
+              <label for="name" class="block text-xs uppercase tracking-wide text-navy/60 mb-2">Your Name</label>
+              <input type="text" id="name" name="name" required placeholder="Jane Doe" class="form-input" />
+            </div>
+            <div>
+              <label for="email" class="block text-xs uppercase tracking-wide text-navy/60 mb-2">Your Email</label>
+              <input type="email" id="email" name="email" required placeholder="jane@example.com" class="form-input" />
+            </div>
+          </div>
+
+          <div>
+            <label for="subject" class="block text-xs uppercase tracking-wide text-navy/60 mb-2">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="Let's collaborate" class="form-input" />
+          </div>
+
+          <div>
+            <label for="message" class="block text-xs uppercase tracking-wide text-navy/60 mb-2">Message</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Tell me a little about your project or idea..." class="form-input resize-none"></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary w-full sm:w-auto justify-center">
+            Send Message
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+          </button>
+
+          <p id="form-success" class="hidden text-sm text-azure font-medium pt-2">
+            Thank you! This form is a UI placeholder — connect it to your backend or a service like Formspree to receive real messages.
+          </p>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =================== FOOTER =================== -->
+  <footer class="relative px-6 py-10 max-w-6xl mx-auto">
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-navy/60">
+      <p>© 2026 Your Name. All rights reserved.</p>
+      <div class="flex gap-4">
+        <a href="contact.html" class="social-icon" aria-label="Email">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg>
+        </a>
+        <a href="#" class="social-icon" aria-label="LinkedIn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.3c-1 0-1.8-.8-1.8-1.8s.8-1.8 1.8-1.8 1.8.8 1.8 1.8-.8 1.8-1.8 1.8zm13.5 10.3h-3v-4.5c0-1.1 0-2.5-1.5-2.5s-1.7 1.2-1.7 2.4v4.6h-3v-9h2.9v1.2c.4-.7 1.4-1.4 2.8-1.4 3 0 3.5 2 3.5 4.5v4.7z"/></svg>
+        </a>
+        <a href="#" class="social-icon" aria-label="GitHub">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.23c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.21.08 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.49 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 0z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <button id="back-to-top" class="fixed bottom-6 right-6 z-40 w-12 h-12 rounded-full btn-primary justify-center opacity-0 pointer-events-none transition-opacity" aria-label="Back to top">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
+  <script src="js/main.js"></script>
+
+  <!-- Page-specific script: contact form placeholder submit handling -->
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      document.getElementById('form-success').classList.remove('hidden');
+      this.reset();
+    });
+  </script>
+</body>
+</html>

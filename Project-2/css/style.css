@@ -1,0 +1,409 @@
+/* =========================================================================
+   PORTFOLIO TEMPLATE — STYLE SHEET
+   Theme: Elegant / Feminine / Modern / Professional
+   Palette: White + shades of blue, soft gradients, glassmorphism
+   This file holds everything Tailwind's utility classes can't express:
+   custom fonts, the butterfly motif, glass cards, timelines and motion.
+   ========================================================================= */
+
+/* ---- Design tokens ------------------------------------------------------ */
+:root {
+  --color-white: #ffffff;
+  --color-mist: #f3f8fd;        /* page background tint */
+  --color-sky: #d9e9fb;         /* light accent */
+  --color-powder: #aecdf0;      /* mid accent */
+  --color-azure: #5b8dd9;       /* primary blue */
+  --color-navy: #1f3a5f;        /* deep text / headings */
+  --color-lavender-blue: #8fb3e0;
+
+  --gradient-soft: linear-gradient(135deg, #f3f8fd 0%, #d9e9fb 45%, #aecdf0 100%);
+  --gradient-azure: linear-gradient(135deg, #5b8dd9 0%, #1f3a5f 100%);
+  --gradient-wing: linear-gradient(135deg, rgba(91,141,217,0.35), rgba(143,179,224,0.15));
+
+  --shadow-soft: 0 10px 40px -10px rgba(31, 58, 95, 0.18);
+  --shadow-glow: 0 0 0 1px rgba(255,255,255,0.4) inset, 0 20px 50px -20px rgba(91,141,217,0.35);
+
+  --font-display: 'Cormorant Garamond', 'Playfair Display', serif;
+  --font-body: 'Poppins', 'Inter', sans-serif;
+}
+
+/* ---- Base ---------------------------------------------------------------- */
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-mist);
+  color: var(--color-navy);
+  overflow-x: hidden;
+  position: relative;
+}
+
+.font-display { font-family: var(--font-display); }
+
+/* Ambient page background — soft radial blue washes behind everything */
+.bg-ambient {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background:
+    radial-gradient(circle at 15% 10%, rgba(174,205,240,0.45), transparent 40%),
+    radial-gradient(circle at 90% 20%, rgba(143,179,224,0.35), transparent 45%),
+    radial-gradient(circle at 50% 100%, rgba(217,233,251,0.6), transparent 50%),
+    #ffffff;
+}
+
+/* ---- Glassmorphism -------------------------------------------------------- */
+.glass-card {
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: var(--shadow-soft);
+  border-radius: 1.25rem;
+  transition: transform 0.45s ease, box-shadow 0.45s ease, background 0.45s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-glow);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.glass-nav {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(174, 205, 240, 0.5);
+}
+
+/* ---- Buttons --------------------------------------------------------------- */
+.btn-primary {
+  background: var(--gradient-azure);
+  color: #fff;
+  border-radius: 999px;
+  padding: 0.85rem 2rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  box-shadow: 0 12px 30px -10px rgba(31,58,95,0.45);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.btn-primary:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 18px 35px -10px rgba(31,58,95,0.55); }
+
+.btn-outline {
+  border: 1.5px solid var(--color-azure);
+  color: var(--color-navy);
+  border-radius: 999px;
+  padding: 0.85rem 2rem;
+  font-weight: 500;
+  background: rgba(255,255,255,0.4);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.btn-outline:hover {
+  background: var(--color-azure);
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+/* ---- Navigation ------------------------------------------------------------ */
+.nav-link {
+  position: relative;
+  color: var(--color-navy);
+  font-weight: 500;
+  padding-bottom: 4px;
+  transition: color 0.3s ease;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: 0;
+  height: 2px; width: 0%;
+  background: var(--gradient-azure);
+  transition: width 0.35s ease;
+  border-radius: 2px;
+}
+.nav-link:hover::after { width: 100%; }
+.nav-link:hover { color: var(--color-azure); }
+
+.nav-link.active {
+  color: var(--color-azure);
+}
+.nav-link.active::after { width: 100%; }
+
+/* ---- Butterfly motif -------------------------------------------------------- */
+.butterfly {
+  position: absolute;
+  pointer-events: none;
+  filter: drop-shadow(0 8px 20px rgba(91,141,217,0.25));
+  animation: flutter-float 7s ease-in-out infinite;
+}
+.butterfly .wing { transform-origin: center; animation: wing-flap 2.6s ease-in-out infinite; }
+.butterfly .wing-left { animation-delay: 0s; }
+.butterfly .wing-right { animation-delay: 0.05s; }
+
+@keyframes wing-flap {
+  0%, 100% { transform: scaleX(1) rotate(0deg); }
+  50% { transform: scaleX(0.78) rotate(-4deg); }
+}
+
+@keyframes flutter-float {
+  0% { transform: translate(0,0) rotate(0deg); }
+  25% { transform: translate(10px,-18px) rotate(4deg); }
+  50% { transform: translate(-6px,-30px) rotate(-3deg); }
+  75% { transform: translate(-14px,-10px) rotate(2deg); }
+  100% { transform: translate(0,0) rotate(0deg); }
+}
+
+.butterfly-slow { animation-duration: 11s; }
+.butterfly-slower { animation-duration: 15s; }
+
+/* Decorative faint watermark butterfly behind sections */
+.butterfly-watermark {
+  position: absolute;
+  opacity: 0.06;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ---- Fade-in / reveal on scroll --------------------------------------------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in {
+  animation: fadeIn 1s ease forwards;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---- Hero blob / gradient ring ----------------------------------------------- */
+.profile-ring {
+  background: var(--gradient-azure);
+  border-radius: 50%;
+  padding: 6px;
+  box-shadow: 0 25px 60px -15px rgba(31,58,95,0.45);
+}
+.profile-ring img, .profile-ring .img-placeholder {
+  border-radius: 50%;
+  background: var(--gradient-soft);
+}
+
+/* ---- Stat cards ---------------------------------------------------------------- */
+.stat-card {
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  border: 1px solid rgba(174,205,240,0.5);
+  transition: transform 0.35s ease;
+}
+.stat-card:hover { transform: translateY(-5px); }
+
+/* ---- Section heading underline accent -------------------------------------------- */
+.section-eyebrow {
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: var(--color-azure);
+  font-weight: 600;
+}
+.heading-underline {
+  width: 56px;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--gradient-azure);
+}
+
+/* ---- Timeline (About page) ------------------------------------------------------- */
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+  border-left: 2px solid var(--color-sky);
+}
+.timeline-item {
+  position: relative;
+  margin-bottom: 2.25rem;
+}
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -2.55rem;
+  top: 0.3rem;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--gradient-azure);
+  box-shadow: 0 0 0 4px rgba(174,205,240,0.6);
+}
+
+/* ---- Skill cards ------------------------------------------------------------------ */
+.skill-card {
+  background: rgba(255,255,255,0.6);
+  border: 1px solid rgba(174,205,240,0.5);
+  border-radius: 1.25rem;
+  backdrop-filter: blur(10px);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+}
+.skill-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: var(--shadow-glow);
+  background: rgba(255,255,255,0.85);
+}
+.skill-icon-wrap {
+  background: var(--gradient-soft);
+  border-radius: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.4s ease;
+}
+.skill-card:hover .skill-icon-wrap { transform: rotate(-6deg) scale(1.08); }
+
+/* ---- Certificates carousel ---------------------------------------------------------- */
+.carousel-track {
+  display: flex;
+  gap: 1.5rem;
+  width: max-content;
+  animation: scroll-left 35s linear infinite;
+}
+.carousel-track:hover { animation-play-state: paused; }
+
+@keyframes scroll-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.cert-card {
+  width: 280px;
+  flex-shrink: 0;
+}
+
+/* Filter chips */
+.filter-chip {
+  border-radius: 999px;
+  padding: 0.45rem 1.2rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 1.5px solid var(--color-sky);
+  color: var(--color-navy);
+  background: rgba(255,255,255,0.5);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.filter-chip.active, .filter-chip:hover {
+  background: var(--gradient-azure);
+  color: #fff;
+  border-color: transparent;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(31,58,95,0.55);
+  backdrop-filter: blur(6px);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+.modal-overlay.open { opacity: 1; visibility: visible; }
+.modal-box {
+  transform: scale(0.92);
+  transition: transform 0.35s ease;
+}
+.modal-overlay.open .modal-box { transform: scale(1); }
+
+/* ---- Project cards ------------------------------------------------------------------- */
+.project-card { overflow: hidden; }
+.project-img-wrap { overflow: hidden; border-radius: 1rem 1rem 0 0; }
+.project-img-wrap img, .project-img-wrap .img-placeholder {
+  transition: transform 0.6s ease;
+}
+.project-card:hover .project-img-wrap img,
+.project-card:hover .project-img-wrap .img-placeholder {
+  transform: scale(1.08);
+}
+
+/* ---- Generic image placeholder ---------------------------------------------------------- */
+.img-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gradient-soft);
+  color: var(--color-azure);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* ---- Contact form ------------------------------------------------------------------------ */
+.form-input {
+  background: rgba(255,255,255,0.6);
+  border: 1.5px solid var(--color-sky);
+  border-radius: 0.85rem;
+  padding: 0.85rem 1.1rem;
+  width: 100%;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  font-family: var(--font-body);
+}
+.form-input:focus {
+  outline: none;
+  border-color: var(--color-azure);
+  box-shadow: 0 0 0 4px rgba(91,141,217,0.18);
+}
+
+/* Social icon buttons */
+.social-icon {
+  width: 46px; height: 46px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.6);
+  border: 1px solid rgba(174,205,240,0.6);
+  color: var(--color-azure);
+  transition: all 0.3s ease;
+}
+.social-icon:hover {
+  background: var(--gradient-azure);
+  color: #fff;
+  transform: translateY(-4px);
+}
+
+/* ---- Footer --------------------------------------------------------------------------------- */
+footer { border-top: 1px solid rgba(174,205,240,0.5); }
+
+/* ---- Scrollbar ------------------------------------------------------------------------------- */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--color-mist); }
+::-webkit-scrollbar-thumb { background: var(--color-powder); border-radius: 999px; }
+
+/* ---- Reduced motion accessibility ------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  .butterfly, .carousel-track, .reveal, .fade-in {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ---- Mobile nav ---------------------------------------------------------------------------- */
+#mobile-menu { transition: max-height 0.4s ease, opacity 0.3s ease; }

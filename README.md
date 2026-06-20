@@ -7,8 +7,8 @@ This repository contains all frontend development projects completed during my i
 | Project   | Description                | Status        |
 | --------- | -------------------------- | ------------- |
 | Project 1 | Raw Pressery Website Clone | ✅ Completed   |
-| Project 2 | Coming Soon                | ⏳ In Progress |
-| Project 3 | Coming Soon                | ⏳ Upcoming    |
+| Project 2 | Portfolio Template         | ✅ Completed  |
+| Project 3 | Coming Soon                | ⏳ In Progress   |
 | Project 4 | Coming Soon                | ⏳ Upcoming    |
 | Project 5 | Coming Soon                | ⏳ Upcoming    |
 | Project 6 | Coming Soon                | ⏳ Upcoming    |
@@ -28,7 +28,7 @@ This repository contains all frontend development projects completed during my i
 3skill-frontend-internship
 │
 ├── Project-1-Raw-Pressery-Clone
-├── Project-2
+├── Project-2-Portfolio-Template 
 ├── Project-3
 ├── Project-4
 ├── Project-5

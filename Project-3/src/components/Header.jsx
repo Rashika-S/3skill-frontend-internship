@@ -1,6 +1,6 @@
 function Header() {
   return (
-    <header className="bg-white text-black shadow-md">
+    <header className="bg-blue-100 text-black shadow-md">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-8 py-4">
 
         <div>

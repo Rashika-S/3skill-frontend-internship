@@ -17,12 +17,12 @@ function GameLayout({
       <div className="grid md:grid-cols-2 gap-8">
 
         {/* Left */}
-        <section className="border-2 border-white rounded-xl flex items-center justify-center p-6">
-          <ExplorerPanel incorrectLetters={incorrectLetters} />
+        <section className="bg-gray-800/70 backdrop-blur-md border border-gray-700 hover:border-gray-500 hover:shadow-2xl transition-all duration-300 rounded-xl p-6">
+         <ExplorerPanel incorrectLetters={incorrectLetters} />
         </section>
 
         {/* Right */}
-        <section className="border-2 border-white rounded-xl p-6">
+        <section className="bg-gray-800/70 backdrop-blur-md border border-gray-700 hover:border-gray-500 hover:shadow-2xl transition-all duration-300 rounded-xl p-6">
 
           <GameInfo selectedAnimal={selectedAnimal} />
 

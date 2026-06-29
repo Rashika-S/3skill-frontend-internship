@@ -1,29 +1,24 @@
-function Header() {
+import SoundButton from "./SoundButton";
+
+function Header({ isMuted, setIsMuted }) {
   return (
-    <header className="bg-blue-100 text-black shadow-md">
+    <header className="bg-gray-800 text-white shadow-md">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-8 py-4">
 
         <div>
-          <h1 className="text-4xl font-bold flex items-center gap-2">
+          <h1 className="text-3xl font-bold flex items-center gap-2">
             🐾 WildWords
           </h1>
 
-          <p className="text-sm text-gray-600">
+          <p className="text-sm text-blue-200">
             Guess the Animal. Save the Explorer.
           </p>
         </div>
 
-        <div className="flex gap-3">
-
-          <button className="border rounded-lg px-4 py-2 hover:bg-black hover:text-white transition">
-            🔊 Sound
-          </button>
-
-          <button className="border rounded-lg px-4 py-2 hover:bg-black hover:text-white transition">
-            🌙 Theme
-          </button>
-
-        </div>
+        <SoundButton
+          isMuted={isMuted}
+          setIsMuted={setIsMuted}
+        />
 
       </div>
     </header>

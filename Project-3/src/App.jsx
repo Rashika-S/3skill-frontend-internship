@@ -1,4 +1,4 @@
-import{ useState , useEffect } from "react";
+import{ useState , useEffect , useRef} from "react";
 import confetti from "canvas-confetti";
 import Header from "./components/Header";
 import GameLayout from "./components/GameLayout";
@@ -15,52 +15,64 @@ function App() {
   .every((letter) => guessedLetters.includes(letter));
 
   const isLoser = incorrectLetters.length >= 6;
+  const [isMuted, setIsMuted] = useState(false);
   
   useEffect(() => {
     if (isWinner) {
-      winSound.play();
+      if (!isMuted) {
+        winSound.current.play();
+      }
 
       confetti({
-      particleCount: 150,
-      spread: 100,
-      origin: { y: 0.6 },
+        particleCount: 150,
+        spread: 100,
+        origin: { y: 0.6 },
       });
     }
-  }, [isWinner]);
+  }, [isWinner, isMuted]);
 
   useEffect(() => {
-    if (isLoser) {
-      loseSound.play();
+    if (isLoser && !isMuted) {
+      loseSound.current.play();
     }
-  }, [isLoser]);
+  }, [isLoser, isMuted]);
 
-  const clickSound = new Audio("/sounds/click.mp3");
-  const correctSound = new Audio("/sounds/correct.mp3");
-  const wrongSound = new Audio("/sounds/wrong.mp3");
-  const winSound = new Audio("/sounds/win.mp3");
-  const loseSound = new Audio("/sounds/lose.mp3");
+const clickSound = useRef(new Audio("/sounds/click.mp3"));
+const correctSound = useRef(new Audio("/sounds/correct.mp3"));
+const wrongSound = useRef(new Audio("/sounds/wrong.mp3"));
+const winSound = useRef(new Audio("/sounds/win.mp3"));
+const loseSound = useRef(new Audio("/sounds/lose.mp3"));
 
   function handleGuess(letter) {
     if (guessedLetters.includes(letter)) return;
 
-    clickSound.currentTime = 0;
-    clickSound.play();
+    if(!isMuted) {
+      clickSound.current.currentTime = 0;
+      clickSound.current.play();
+    }
 
     const updatedLetters = [...guessedLetters, letter];
     setGuessedLetters(updatedLetters);
 
     if (selectedAnimal.word.includes(letter)) {
-      correctSound.currentTime = 0;
-      correctSound.play();
+      if(!isMuted) {
+        correctSound.current.currentTime = 0;
+        correctSound.current.play();
+      }
     } else {
-      wrongSound.currentTime = 0;
-      wrongSound.play();
+      if(!isMuted) {
+        wrongSound.current.currentTime = 0;
+        wrongSound.current.play();
+      }
     }
   }
 
   return (
     <div className="min-h-screen flex flex-col bg-linear-to-br from-gray-950 via-gray-900 to-gray-800 text-white">
-      <Header />
+      <Header
+        isMuted={isMuted}
+        setIsMuted={setIsMuted}
+      />
       <GameLayout 
       selectedAnimal={selectedAnimal} 
       guessedLetters={guessedLetters} 
@@ -68,6 +80,7 @@ function App() {
       incorrectLetters={incorrectLetters}
       isWinner={isWinner}
       isLoser={isLoser}
+      isMuted={isMuted}
       restartGame={restartGame}
       />
       <Footer />

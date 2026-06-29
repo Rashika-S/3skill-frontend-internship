@@ -1,14 +1,16 @@
 function Footer() {
   return (
-    <footer className="border-t border-gray-800 py-6 mt-10 text-center text-gray-400">
-      <p>© 2026 WildWords</p>
+    <footer className="py-6 text-center text-gray-400">
+      <p className="text-sm font-medium">
+        © 2026 WildWords
+      </p>
 
-      <p className="mt-2">
+      <p className="mt-2 text-sm">
         Built with React • Tailwind CSS • JavaScript
       </p>
 
-      <p className="mt-2">
-        Made by Rashika S
+      <p className="mt-2 text-sm">
+        Made with ❤️ by <span className="font-semibold text-white">Rashika S</span>
       </p>
     </footer>
   );

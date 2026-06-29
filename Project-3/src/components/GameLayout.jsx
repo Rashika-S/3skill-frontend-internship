@@ -81,8 +81,8 @@ function GameLayout({
             <div className="flex justify-center mt-6">
               <button
                 onClick={restartGame}
-                className="bg-white text-black px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition"
-              >
+                className="bg-white text-black px-8 py-3 rounded-xl font-bold hover:bg-gray-200 hover:scale-105 active:scale-95 transition-all duration-200 shadow-lg"
+                >
                 🔄 Play Again
               </button>
             </div>

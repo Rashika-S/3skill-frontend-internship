@@ -4,7 +4,7 @@ function Header() {
       <div className="max-w-7xl mx-auto flex items-center justify-between px-8 py-4">
 
         <div>
-          <h1 className="text-3xl font-bold flex items-center gap-2">
+          <h1 className="text-4xl font-bold flex items-center gap-2">
             🐾 WildWords
           </h1>
 

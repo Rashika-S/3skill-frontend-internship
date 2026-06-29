@@ -13,9 +13,9 @@ function Keyboard({ guessedLetters, handleGuess , isWinner, isLoser, }) {
           className="
             border
             border-white
-            rounded-lg
-            py-3
-            text-lg
+            rounded-xl
+            py-4
+            text-xl
             font-semibold
             hover:bg-white
             hover:text-black

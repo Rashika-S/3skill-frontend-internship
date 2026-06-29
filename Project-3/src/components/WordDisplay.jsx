@@ -6,13 +6,13 @@ function WordDisplay({ selectedAnimal, guessedLetters }) {
         Guess the Animal
       </p>
 
-      <div className="flex justify-center gap-4 flex-wrap">
+      <div className="flex justify-center gap-5 flex-wrap">
 
         {selectedAnimal.word.split("").map((letter, index) => (
 
         <span
           key={index}
-          className="text-5xl font-bold border-b-4 border-white w-10 text-center"
+          className="text-6xl font-bold border-b-4 border-white w-10 text-center transition-all duration-300 hover:scale-110 "
         >
           {guessedLetters.includes(letter) ? letter : "_"}
         </span>

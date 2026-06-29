@@ -14,7 +14,7 @@ function ExplorerPanel({ incorrectLetters }) {
       </h2>
 
       <p className="text-gray-400 mt-2">
-        Ready for Adventure
+        Stay alive by guessing the animal correctly.
       </p>
 
       <div className="mt-8 w-full">

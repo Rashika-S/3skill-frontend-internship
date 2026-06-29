@@ -59,7 +59,7 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-950 via-gray-900 to-gray-800 text-white">
+    <div className="min-h-screen flex flex-col bg-linear-to-br from-gray-950 via-gray-900 to-gray-800 text-white">
       <Header />
       <GameLayout 
       selectedAnimal={selectedAnimal} 

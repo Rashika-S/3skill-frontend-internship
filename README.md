@@ -10,8 +10,8 @@ This repository contains all frontend development projects completed during my i
 | --------- | ------------------ | ----------- | --------------------------------------- |
 | Project 1 | Raw Pressery Clone | ✅ Completed | https://3skill-frontend-internship.vercel.app/|
 | Project 2 | Portfolio Template | ✅ Completed | https://project-2-ten-wheat.vercel.app/ |
-| Project 3 | Coming Soon        | ⏳ Upcoming  | -                                       |
-| Project 4 | Coming Soon        | ⏳ Upcoming  | -                                       |
+| Project 3 | WildWords       | ✅ Completed  | https://wildwords-hamgman-concept.vercel.app/                                       |
+| Project 4 | Coming Soon        | In Progress  | -                                       |
 | Project 5 | Coming Soon        | ⏳ Upcoming  | -                                       |
 | Project 6 | Coming Soon        | ⏳ Upcoming  | -                                       |
 
@@ -21,6 +21,9 @@ This repository contains all frontend development projects completed during my i
 * HTML5
 * CSS3
 * JavaScript
+* React
+* Tailwind CSS
+* Vite
 * Git
 * GitHub
 * Vercel
@@ -32,7 +35,7 @@ This repository contains all frontend development projects completed during my i
 │
 ├── Project-1-Raw-Pressery-Clone
 ├── Project-2-Portfolio-Template 
-├── Project-3
+├── Project-3-WildWords
 ├── Project-4
 ├── Project-5
 └── Project-6

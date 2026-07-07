@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { FaUser, FaUsers, FaArrowRight, FaKey } from "react-icons/fa";
+import Leaderboard from "./pages/Leaderboard";
 
 function Join() {
   const [mode, setMode] = useState("solo");
-
+  <Route path="/leaderboard" element={<Leaderboard />} />
+  
   return (
     <main className="min-h-screen flex items-center justify-center bg-gradient from-[#0F0F0F] via-[#2B0A0A] to-black px-6">
 

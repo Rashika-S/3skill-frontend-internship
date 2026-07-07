@@ -6,6 +6,7 @@ import {
   FaTrophy,
   FaQuestionCircle,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -71,15 +72,19 @@ function Home() {
 
       <div className="flex flex-col md:flex-row gap-6 mt-16">
 
-        <button className="bg-yellow-500 hover:bg-yellow-400 hover:scale-105 transition-all px-8 py-4 rounded-xl text-black font-bold flex items-center gap-3 text-lg">
-          <FaUser />
-          Play Solo
-        </button>
+        <Link to="/join">
+            <button className="bg-yellow-500 hover:bg-yellow-400 hover:scale-105 transition-all px-8 py-4 rounded-xl text-black font-bold flex items-center gap-3 text-lg">
+                <FaUser />
+                Play Solo
+             </button>
+        </Link>
 
-        <button className="border-2 border-yellow-500 hover:bg-yellow-500 hover:text-black hover:scale-105 transition-all px-8 py-4 rounded-xl font-bold flex items-center gap-3 text-lg">
-          <FaUsers />
-          Compete with Friends
-        </button>
+        <Link to="/join">
+          <button className="border-2 border-yellow-500 hover:bg-yellow-500 hover:text-black hover:scale-105 transition-all px-8 py-4 rounded-xl font-bold flex items-center gap-3 text-lg">
+            <FaUsers />
+            Compete with Friends
+          </button>
+        </Link>
 
       </div>
 

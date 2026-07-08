@@ -21,6 +21,8 @@ function Quiz() {
   const [selected, setSelected] = useState(null);
   const [locked, setLocked] = useState(false);
 
+  const [answerStatus, setAnswerStatus] = useState("");
+
   function nextQuestion() {
 
     if (currentQuestion === questions.length - 1) {
@@ -54,15 +56,25 @@ function Quiz() {
     const correct = index === questions[currentQuestion].answer;
 
     if (correct) {
+
+      setAnswerStatus("Correct! 🎉");
+
       correctSound.current.currentTime = 0;
       correctSound.current.play();
+
       setScore((prev) => prev + 1);
+
     } else {
+
+      setAnswerStatus("Wrong! ❌");
+
       wrongSound.current.currentTime = 0;
       wrongSound.current.play();
+
     }
 
     setTimeout(() => {
+      setAnswerStatus("");
       setSelected(null);
       setLocked(false);
 
@@ -79,17 +91,47 @@ function Quiz() {
     }, 1200);
   }
 
+
+const optionColors = [
+  "bg-red-600 hover:bg-red-500",
+  "bg-blue-600 hover:bg-blue-500",
+  "bg-yellow-500 hover:bg-yellow-400 text-black",
+  "bg-green-600 hover:bg-green-500",
+];
+
   return (
 
     <main className="min-h-screen bg-linear-to-b from-black via-[#2B0A0A] to-black flex justify-center items-center px-6">
 
       <div className="bg-[#1B1B1B] w-full max-w-3xl p-8 rounded-2xl border border-yellow-500">
 
-        <p className="text-yellow-400 mb-6">
+        <div className="text-center mb-6">
 
-          Question {currentQuestion + 1} / {questions.length}
+          <span className="bg-yellow-500/20 border border-yellow-500 text-yellow-300 px-5 py-2 rounded-full font-semibold">
 
-        </p>
+            {questions[currentQuestion].category}
+
+          </span>
+
+          <p className="mt-4 text-lg text-gray-300">
+
+            Question
+
+            <span className="text-yellow-400 font-bold">
+              {" "}
+              {currentQuestion + 1}
+            </span>
+
+            /
+
+            <span className="text-yellow-400 font-bold">
+              {" "}
+              {questions.length}
+            </span>
+
+          </p>
+
+        </div>
 
         <div className="w-full h-3 bg-gray-700 rounded-full mb-8">
 
@@ -123,6 +165,18 @@ function Quiz() {
 
         </AnimatePresence>
 
+        {answerStatus && (
+          <p
+            className={`text-xl font-bold text-center mb-6 ${
+              answerStatus.includes("Correct")
+                ? "text-green-400"
+                : "text-red-400"
+            }`}
+          >
+            {answerStatus}
+          </p>
+        )}
+
         <AnimatePresence mode="wait">
 
           <motion.div
@@ -140,35 +194,40 @@ function Quiz() {
 
                 key={index}
 
-                whileHover={{ scale: 1.02 }}
+                whileHover={{ scale: 1.03 }}
 
-                whileTap={{ scale: 0.97 }}
+                whileTap={{ scale: 0.96 }}
 
                 onClick={() => handleAnswer(index)}
 
-                className={`p-5 rounded-xl text-left font-semibold transition-all duration-300 border-2
+                className={`
 
-                ${
-                  selected === null
-                    ? "bg-[#262626] hover:bg-yellow-500 hover:text-black border-transparent"
-                    : index === questions[currentQuestion].answer
-                    ? "bg-green-600 border-green-400 text-white"
-                    : selected === index
-                    ? "bg-red-600 border-red-400 text-white"
-                    : "bg-[#262626] opacity-60"
-                }`}
+                  p-5 rounded-2xl text-left font-bold transition-all duration-300 border-2
+
+                  ${
+                    selected === null
+                      ? `${optionColors[index]} border-transparent hover:scale-[1.03] hover:shadow-xl`
+                      : index === questions[currentQuestion].answer
+                      ? "bg-green-600 border-green-300 scale-105"
+                      : selected === index
+                      ? "bg-red-700 border-red-300"
+                      : "bg-gray-700 opacity-40"
+                  }
+               `}
 
               >
 
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-5">
 
-                  <span className="w-10 h-10 rounded-full bg-black/20 flex items-center justify-center font-bold">
+                  <div className="w-12 h-12 rounded-full bg-black/25 flex items-center justify-center text-xl font-bold">
 
                     {["A", "B", "C", "D"][index]}
 
-                  </span>
+                  </div>
 
-                  <span>{option}</span>
+                  <span className="text-lg" >
+                    {option}
+                  </span>
 
                 </div>
 

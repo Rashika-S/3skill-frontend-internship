@@ -1,5 +1,6 @@
 const questions = [
   {
+    category: "⚔ Story",
     question: "Why did Katappa kill Amarendra Baahubali?",
     options: [
       "Because Baahubali was eating Katappa's food",
@@ -11,6 +12,7 @@ const questions = [
   },
 
   {
+    category: "👑 Characters",
     question: "Who is the son of Devasena?",
     options: [
       "Amarendra Baahubali",
@@ -22,6 +24,7 @@ const questions = [
   },
 
   {
+    category: "⚔ Story",
     question: "What is the name of the kingdom?",
     options: [
       "Mahishmati",
@@ -33,6 +36,7 @@ const questions = [
   },
 
   {
+    category: "🎬Movie Trivia",
     question: "Who directed Baahubali?",
     options: [
       "S. S. Rajamouli",
@@ -44,6 +48,7 @@ const questions = [
   },
 
   {
+    category: "🎬Movie Trivia",
     question: "Who played Amarendra Baahubali?",
     options: [
       "Prabhas",

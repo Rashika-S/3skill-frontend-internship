@@ -21,34 +21,65 @@ function Timer({ currentQuestion, onTimeUp }) {
     return () => clearInterval(interval);
   }, [time, onTimeUp]);
 
-  return (
-    <div className="mb-8">
+    return (
+        <div className="flex justify-center mb-8">
 
-      <div className="flex justify-between mb-2">
-        <span>Time Left</span>
-        <span>{time}s</span>
-      </div>
+            <div className="relative w-24 h-24">
 
-      <div className="w-full bg-gray-700 rounded-full h-3">
+            <svg className="w-24 h-24 rotate-\[-90deg]\">
 
-        <motion.div
-            animate={{
-                width: `${(time / 20) * 100}%`,
-            }}
-            transition={{ duration: 1 }}
-            className={`h-3 rounded-full ${
-              time > 10
-                ? "bg-green-500"
-                : time > 5
-                ? "bg-yellow-400"
-                : "bg-red-500"
-            }`}
-        />
+                <circle
+                cx="48"
+                cy="48"
+                r="42"
+                stroke="#444"
+                strokeWidth="8"
+                fill="none"
+                />
 
-      </div>
+                <motion.circle
+                cx="48"
+                cy="48"
+                r="42"
+                stroke={
+                    time > 10
+                    ? "#22c55e"
+                    : time > 5
+                    ? "#facc15"
+                    : "#ef4444"
+                }
+                strokeWidth="8"
+                fill="none"
+                strokeLinecap="round"
+                strokeDasharray={264}
+                animate={{
+                    strokeDashoffset: 264 - (time / 20) * 264,
+                }}
+                transition={{ duration: 1 }}
+                />
 
-    </div>
-  );
+            </svg>
+
+            <div className="absolute inset-0 flex items-center justify-center">
+
+                <span
+                className={`text-3xl font-bold ${
+                    time > 10
+                    ? "text-green-400"
+                    : time > 5
+                    ? "text-yellow-400"
+                    : "text-red-400 animate-pulse"
+                }`}
+                >
+                {time}
+                </span>
+
+            </div>
+
+            </div>
+
+        </div>
+    );
 }
 
 export default Timer;

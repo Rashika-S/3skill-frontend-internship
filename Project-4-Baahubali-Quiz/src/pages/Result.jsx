@@ -16,6 +16,8 @@ function Result() {
   const total = state?.total || 5;
 
   let title = "";
+  let subtitle = "";
+  let badge = "";
 
   useEffect(() => {
 
@@ -33,10 +35,35 @@ function Result() {
 
     }, []);
 
-  if (score === total) title = "👑 True Ruler of Mahishmati";
-  else if (score >= 4) title = "⚔ Royal Commander";
-  else if (score >= 2) title = "🛡 Brave Warrior";
-  else title = "😂 Katappa Needs To Train You";
+  if (score === total) {
+  title = "👑 True King of Mahishmati";
+  subtitle = "Even Katappa Salutes You!";
+  badge = "🏆 LEGEND";
+  }
+
+  else if (score >= total * 0.8) {
+    title = "⚔ Royal Commander";
+    subtitle = "A fearless protector of Mahishmati.";
+    badge = "🥇 ELITE";
+  }
+
+  else if (score >= total * 0.6) {
+    title = "🛡 Elite Warrior";
+    subtitle = "Your courage is admired.";
+    badge = "🥈 PRO";
+  }
+
+  else if (score >= total * 0.4) {
+    title = "🏹 Brave Soldier";
+    subtitle = "Train harder and rise again.";
+    badge = "🥉 NOVICE";
+  }
+
+  else {
+    title = "😂 Katappa Needs To Train You";
+    subtitle = "The kingdom believes in second chances.";
+    badge = "📜 RECRUIT";
+  }
 
   return (
 
@@ -76,11 +103,25 @@ function Result() {
           {title}
         </h2>
 
-        <p className="text-6xl text-yellow-400 mb-10">
-
-          {score} / {total}
-
+        <p className="text-gray-300 text-lg mb-6">
+          {subtitle}
         </p>
+
+        <div className="inline-block bg-yellow-500 text-black px-6 py-2 rounded-full font-bold mb-8 shadow-lg">
+          {badge}
+        </div>
+
+        <div className="mb-10">
+
+          <h3 className="text-gray-400 text-lg">
+            Final Score
+          </h3>
+
+          <p className="text-7xl font-bold text-yellow-400">
+            {score} / {total}
+          </p>
+
+        </div>
 
         <button
 

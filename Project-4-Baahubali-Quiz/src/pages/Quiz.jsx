@@ -8,6 +8,7 @@ import correct from "../assets/sounds/correct.mp3";
 import wrong from "../assets/sounds/wrong.mp3";
 
 import { motion, AnimatePresence } from "framer-motion";
+import { FaSignOutAlt } from "react-icons/fa";
 
 function Quiz() {
   const navigate = useNavigate();
@@ -144,10 +145,34 @@ const optionColors = [
 
         </div>
 
-        <Timer
-          currentQuestion={currentQuestion}
-          onTimeUp={nextQuestion}
-        />
+        <div className="flex justify-between items-center mb-8">
+
+          <div className="bg-yellow-500/20 border border-yellow-500 px-5 py-2 rounded-full">
+
+            <span className="text-yellow-300 font-semibold">
+              ⭐ Score: {score}
+            </span>
+
+          </div>
+
+          <Timer
+            currentQuestion={currentQuestion}
+            onTimeUp={nextQuestion}
+          />
+
+        </div>
+
+        <div className="flex justify-end mb-6">
+
+          <button
+            onClick={() => navigate("/")}
+            className="flex items-center gap-2 text-red-400 hover:text-red-300 transition"
+          >
+            <FaSignOutAlt />
+            Quit Quiz
+          </button>
+
+        </div>
 
         <AnimatePresence mode="wait">
 

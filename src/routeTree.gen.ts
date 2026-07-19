@@ -9,8 +9,38 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ResultRouteImport } from './routes/result'
+import { Route as QuizRouteImport } from './routes/quiz'
+import { Route as LobbyRouteImport } from './routes/lobby'
+import { Route as LeaderboardRouteImport } from './routes/leaderboard'
+import { Route as JoinRouteImport } from './routes/join'
 import { Route as IndexRouteImport } from './routes/index'
 
+const ResultRoute = ResultRouteImport.update({
+  id: '/result',
+  path: '/result',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const QuizRoute = QuizRouteImport.update({
+  id: '/quiz',
+  path: '/quiz',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LobbyRoute = LobbyRouteImport.update({
+  id: '/lobby',
+  path: '/lobby',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LeaderboardRoute = LeaderboardRouteImport.update({
+  id: '/leaderboard',
+  path: '/leaderboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JoinRoute = JoinRouteImport.update({
+  id: '/join',
+  path: '/join',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +49,90 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/join': typeof JoinRoute
+  '/leaderboard': typeof LeaderboardRoute
+  '/lobby': typeof LobbyRoute
+  '/quiz': typeof QuizRoute
+  '/result': typeof ResultRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/join': typeof JoinRoute
+  '/leaderboard': typeof LeaderboardRoute
+  '/lobby': typeof LobbyRoute
+  '/quiz': typeof QuizRoute
+  '/result': typeof ResultRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/join': typeof JoinRoute
+  '/leaderboard': typeof LeaderboardRoute
+  '/lobby': typeof LobbyRoute
+  '/quiz': typeof QuizRoute
+  '/result': typeof ResultRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/join' | '/leaderboard' | '/lobby' | '/quiz' | '/result'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/join' | '/leaderboard' | '/lobby' | '/quiz' | '/result'
+  id:
+    | '__root__'
+    | '/'
+    | '/join'
+    | '/leaderboard'
+    | '/lobby'
+    | '/quiz'
+    | '/result'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  JoinRoute: typeof JoinRoute
+  LeaderboardRoute: typeof LeaderboardRoute
+  LobbyRoute: typeof LobbyRoute
+  QuizRoute: typeof QuizRoute
+  ResultRoute: typeof ResultRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/result': {
+      id: '/result'
+      path: '/result'
+      fullPath: '/result'
+      preLoaderRoute: typeof ResultRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/quiz': {
+      id: '/quiz'
+      path: '/quiz'
+      fullPath: '/quiz'
+      preLoaderRoute: typeof QuizRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lobby': {
+      id: '/lobby'
+      path: '/lobby'
+      fullPath: '/lobby'
+      preLoaderRoute: typeof LobbyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/leaderboard': {
+      id: '/leaderboard'
+      path: '/leaderboard'
+      fullPath: '/leaderboard'
+      preLoaderRoute: typeof LeaderboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/join': {
+      id: '/join'
+      path: '/join'
+      fullPath: '/join'
+      preLoaderRoute: typeof JoinRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,17 +145,12 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  JoinRoute: JoinRoute,
+  LeaderboardRoute: LeaderboardRoute,
+  LobbyRoute: LobbyRoute,
+  QuizRoute: QuizRoute,
+  ResultRoute: ResultRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

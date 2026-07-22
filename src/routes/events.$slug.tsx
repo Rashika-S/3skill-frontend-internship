@@ -37,7 +37,8 @@ export const Route = createFileRoute("/events/$slug")({
 });
 
 function EventDetail() {
-  const { event } = Route.useLoaderData();
+  const data = Route.useLoaderData() as { event: import("@/data/events").EventItem };
+  const event = data.event;
   const [favs, setFavs] = useFavorites();
   const navigate = useNavigate();
   const isFav = favs.includes(event.id);

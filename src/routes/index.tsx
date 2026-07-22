@@ -16,8 +16,8 @@ export const Route = createFileRoute("/")({
     meta: [
       { title: "EventNest — Discover, Book, and Celebrate Events" },
       { name: "description", content: "The premium event platform for concerts, hackathons, weddings and everything in between." },
-      { property: "og:title", content: "EventNest — Smart Event Management Platform" },
-      { property: "og:description", content: "Discover, book and celebrate events. Curated, beautiful, effortless." },
+      { property: "og:title", content: "EventNest — Discover, Book, and Celebrate Events" },
+      { property: "og:description", content: "The premium event platform for concerts, hackathons, weddings and everything in between." },
     ],
   }),
   component: Landing,
